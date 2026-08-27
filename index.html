@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alberti Abogados — Derecho Empresarial y Laboral en Córdoba</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .hero{
+    position:relative; min-height:92vh; background:var(--navy);
+    display:flex; flex-direction:column; justify-content:center; overflow:hidden; padding:0 56px;
+  }
+  .hero-lines{position:absolute; inset:0; pointer-events:none;
+    background-image:repeating-linear-gradient(to bottom, transparent, transparent 63px, var(--line) 64px); opacity:0.5;}
+  .hero-octagon{position:absolute; right:-180px; top:50%; transform:translateY(-50%); width:820px; height:820px; opacity:0.06;}
+  .hero-content{position:relative; z-index:2; max-width:720px;}
+  .hero-brand{font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:3px; color:var(--brass-light); margin-bottom:22px;}
+  .hero h1{color:#fff; font-size:clamp(36px,4.6vw,58px); font-weight:400; line-height:1.14; letter-spacing:-0.5px;}
+  .hero h1 .sep{color:var(--brass); font-weight:300; margin:0 6px;}
+  .hero p{color:rgba(255,255,255,0.68); font-size:16.5px; line-height:1.7; margin-top:24px; max-width:480px;}
+  .hero-actions{margin-top:40px; display:flex; align-items:center; gap:26px; flex-wrap:wrap;}
+
+  .strip{background:var(--navy-2); border-top:1px solid var(--line); padding:20px 0; overflow:hidden; position:relative; z-index:2;}
+  .strip-track{display:flex; gap:64px; white-space:nowrap; animation:marquee 28s linear infinite; width:max-content;}
+  .strip-track span{font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:1.5px; color:rgba(255,255,255,0.5); text-transform:uppercase; display:flex; align-items:center; gap:64px;}
+  .strip-track span::after{content:'—'; color:var(--brass);}
+  @keyframes marquee{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+
+  .numbers{background:var(--paper); padding:100px 56px; display:grid; grid-template-columns:1fr 2fr; gap:80px;}
+  .numbers-label{font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--grey);}
+  .numbers-label span{color:var(--brass);}
+  .numbers-title{font-family:'Fraunces',serif; font-size:clamp(22px,2.4vw,30px); font-weight:400; line-height:1.4; color:var(--ink); margin-top:18px; max-width:400px;}
+  .stat-grid{display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line-dark);}
+  .stat{padding:32px 24px 0 0; border-bottom:1px solid var(--line-dark);}
+  .stat-num{font-family:'Fraunces',serif; font-size:48px; font-weight:400; color:var(--navy); line-height:1;}
+  .stat-num sup{font-size:20px; color:var(--brass); font-family:'IBM Plex Mono',monospace; top:-1.4em;}
+  .stat-label{font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:1px; text-transform:uppercase; color:var(--grey); margin-top:12px; padding-bottom:32px;}
+
+  @media (max-width:860px){
+    .hero{padding:0 24px; min-height:88vh;}
+    .numbers{grid-template-columns:1fr; padding:64px 24px; gap:36px;}
+    .stat-grid{grid-template-columns:1fr;}
+    .stat{padding-right:0;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="30,4 70,4 96,30 96,70 70,96 30,96 4,70 4,30" stroke="#B08D57" stroke-width="4"/>
+    </svg>
+    ALBERTI ABOGADOS
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="derecho-empresarial.html">Derecho Empresarial</a>
+    <a href="derecho-laboral.html">Derecho Laboral</a>
+    <a href="el-estudio.html">El Estudio</a>
+    <a href="index.html#contacto">Contacto</a>
+  </div>
+  <div class="nav-overlay"></div>
+  <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="https://wa.me/5493515218707" class="nav-cta-icon" aria-label="Escribinos por WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm5.78 14.02c-.24.68-1.19 1.25-1.95 1.41-.53.11-1.21.2-3.52-.75-2.95-1.22-4.85-4.19-5-4.39-.15-.2-1.19-1.58-1.19-3.02 0-1.44.75-2.14 1.02-2.43.24-.26.53-.33.7-.33.18 0 .35 0 .5.01.16.01.38-.06.59.45.24.58.81 2 .88 2.14.07.15.11.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.13.56.16.28.7 1.16 1.5 1.88 1.04.93 1.91 1.22 2.19 1.36.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.19-.28.37-.23.62-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.7-.17 1.37z"/></svg>
+  </a>
+</nav>
+
+<section class="hero">
+  <div class="hero-lines"></div>
+  <svg class="hero-octagon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="30,4 70,4 96,30 96,70 70,96 30,96 4,70 4,30" stroke="#B08D57" stroke-width="0.6"/>
+  </svg>
+  <div class="hero-content">
+    <div class="hero-brand">ALBERTI ABOGADOS</div>
+    <h1 class="serif">Derecho Empresarial<span class="sep">|</span>Derecho Laboral</h1>
+    <p>Más de 20 años de ejercicio profesional en Córdoba, con atención y seguimiento directo en cada caso — sin intermediarios.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5493515218707" class="btn-primary">Escribinos por WhatsApp</a>
+      <a href="tel:+5493515218707" class="link-call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +54 9 351 521-8707
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-track">
+    <span>+20 años de ejercicio profesional</span>
+    <span>+700 procesos judiciales</span>
+    <span>Atención y seguimiento directo</span>
+    <span>Córdoba y otras jurisdicciones</span>
+    <span>+20 años de ejercicio profesional</span>
+    <span>+700 procesos judiciales</span>
+    <span>Atención y seguimiento directo</span>
+    <span>Córdoba y otras jurisdicciones</span>
+  </div>
+</div>
+
+<section class="numbers">
+  <div>
+    <div class="numbers-label">— <span>Trayectoria</span></div>
+    <div class="numbers-title">Experiencia real, con atención profesional directa — no la estructura de una gran firma.</div>
+  </div>
+  <div class="stat-grid">
+    <div class="stat"><div class="stat-num serif">20<sup>+</sup></div><div class="stat-label">Años de ejercicio</div></div>
+    <div class="stat"><div class="stat-num serif">700<sup>+</sup></div><div class="stat-label">Procesos judiciales</div></div>
+    <div class="stat"><div class="stat-num serif">2</div><div class="stat-label">Áreas de práctica</div></div>
+  </div>
+</section>
+
+<section class="section section-navy" style="padding-top:0;">
+  <div class="section-head">
+    <div class="section-title serif" style="color:#fff;">Dos áreas de práctica, según lo que necesite tu empresa o tu situación.</div>
+  </div>
+  <div class="big-areas">
+    <a href="derecho-empresarial.html" class="big-area-card">
+      <div>
+        <div class="eyebrow">Empresarial</div>
+        <h3 class="serif">Derecho Empresarial</h3>
+        <p>Asesoramiento continuo, societario, contratos comerciales, M&amp;A, litigios y compliance — para empresas que buscan prevenir antes que reaccionar.</p>
+      </div>
+      <div class="go">Ver áreas →</div>
+    </a>
+    <a href="derecho-laboral.html" class="big-area-card">
+      <div>
+        <div class="eyebrow">Laboral</div>
+        <h3 class="serif">Derecho Laboral</h3>
+        <p>Para empresas: gestión y prevención de conflictos. Para trabajadores: despidos, indemnizaciones y reclamos laborales.</p>
+      </div>
+      <div class="go">Ver áreas →</div>
+    </a>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="profile">
+    <img src="federico.jpg" alt="Federico Alberti">
+    <div>
+      <div class="eyebrow on-light">El Estudio</div>
+      <h3 class="serif">Federico Alberti</h3>
+      <p>Abogado con más de 20 años de ejercicio profesional y participación en más de 700 procesos judiciales. Atención directa, sin intermediarios, en cada caso que toma el estudio.</p>
+      <a href="el-estudio.html">Conocé más sobre el estudio →</a>
+    </div>
+  </div>
+</section>
+
+<section class="location-section">
+  <div class="location-copy">
+    <div class="sec-eyebrow">UBICACIÓN</div>
+    <h2 class="serif">Atendemos en Córdoba y en otras jurisdicciones del país.</h2>
+    <p>Consultas presenciales con turno previo. La mayoría de las gestiones se coordinan de forma remota, con seguimiento directo del abogado responsable.</p>
+    <div class="address-line">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Av. Hipólito Yrigoyen 146, Piso 15<br>X5000, Córdoba Capital
+    </div>
+    <a href="https://maps.app.goo.gl/EgUKkdiD1y483kN4A" target="_blank" class="link-ghost on-light">Cómo llegar →</a>
+  </div>
+  <iframe class="location-map" loading="lazy"
+    src="https://www.google.com/maps?q=Av.+Hip%C3%B3lito+Yrigoyen+146,+C%C3%B3rdoba,+Argentina&output=embed">
+  </iframe>
+</section>
+
+<section class="cta-band" id="contacto">
+  <h2 class="serif">¿En qué te podemos ayudar?</h2>
+  <div class="cta-row">
+    <a href="https://wa.me/5493515218707" class="btn-primary">Escribinos por WhatsApp</a>
+    <a href="tel:+5493515218707" class="link-call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      +54 9 351 521-8707
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-row">
+    <div>Alberti Abogados © 2026 · Av. Hipólito Yrigoyen 146, Piso 15 — Córdoba</div>
+    <div><a href="mailto:contacto@abogadofedericoalberti.com">contacto@abogadofedericoalberti.com</a> · <a href="tel:+5493515218707">+54 9 351 521-8707</a></div>
+  </div>
+</footer>
+
+<script src="nav.js" defer></script>
+</body>
+</html>
