@@ -34,3 +34,28 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'Escape') closeMenu();
   });
 });
+
+// --- Seguimiento de conversión: clics a WhatsApp ---
+document.addEventListener('DOMContentLoaded', function () {
+  var waLinks = document.querySelectorAll('a[href^="https://wa.me/"]');
+
+  waLinks.forEach(function (link) {
+    // Si el link ya tiene su propio onclick (ej: botón "Solicitá tu consulta"),
+    // no le agregamos este seguimiento genérico para no duplicar la conversión.
+    if (link.hasAttribute('onclick')) return;
+
+    link.addEventListener('click', function (e) {
+      if (typeof gtag !== 'function') return; // por si esta página todavía no tiene el tag base
+
+      e.preventDefault();
+      var destino = link.href;
+
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18023367916/h78qCI-m59UcEOyJm5JD',
+        'event_callback': function () {
+          window.location = destino;
+        }
+      });
+    });
+  });
+});
